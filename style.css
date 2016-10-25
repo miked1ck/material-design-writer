@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+
+/* Layout
+***********************/
+
 .layout {
   display: flex;
   align-items: center;
@@ -15,6 +19,10 @@ body {
   height: 100vh;
   background:  linear-gradient(45deg, rgba(144,164,174,.1) 0%, rgba(207,216,220,1) 100%);
 }
+
+
+/* Button
+***********************/
 
 .button {
   background: #fff;
@@ -44,18 +52,16 @@ body {
   text-align: center;
   cursor: pointer;
   height: 60px;
+  margin: 0;
 }
 
 .button__trigger:focus {
   outline: none;
 }
 
-.toolbar {
-  overflow: hidden;
-  position: relative;
-  height 0;
-  background: #2979FF;
-}
+
+/* Editor
+***********************/
 
 .editor {
   height: 0;
@@ -75,6 +81,17 @@ body {
 
 .editor__textarea:focus {
   outline: none;
+}
+
+
+/* Toolbar
+***********************/
+
+.toolbar {
+  overflow: hidden;
+  position: relative;
+  height 0;
+  background: #2979FF;
 }
 
 .toolbar__slot {
@@ -121,7 +138,6 @@ body {
 /***************************************/
 
 
-/* On write */
 .layout--writing .button__trigger {
   display: none;
 }
