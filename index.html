@@ -4,34 +4,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link type="text/css" href="style.css" rel="stylesheet" media="screen, projection">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body class="body">
     <div class="layout">
+
       <div class="button">
         <button type="button" class="button__trigger">Write</button>
-      </div>
 
-      <div class="editor">
-        <div class="editor__content">
-          <div class="toolbar">
-            <ul class="toolbar__slot toolbar__slot--left">
-              <li class="toolbar__item">B</li>
-              <li class="toolbar__item">B</li>
-              <li class="toolbar__item">B</li>
-              <li class="toolbar__item">B</li>
-            </ul>
+        <div class="toolbar">
+          <ul class="toolbar__slot toolbar__slot--left">
+            <li class="toolbar__item"><i class="material-icons">format_bold</i></li>
+            <li class="toolbar__item"><i class="material-icons">format_underline</i></li>
+            <li class="toolbar__item"><i class="material-icons">format_italic</i></li>
+            <li class="toolbar__item"><i class="material-icons">format_list_bulleted</i></li>
+            <li class="toolbar__item"><i class="material-icons">format_list_numbered</i></li>
+          </ul>
 
-            <ul class="toolbar__slot toolbar__slot--right">
-              <li class="toolbar__item">B</li>
-              <li class="toolbar__item">B</li>
-              <li class="toolbar__item">B</li>
-              <li class="toolbar__item">B</li>
-            </ul>
-          </div>
+          <ul class="toolbar__slot toolbar__slot--right">
+            <li class="toolbar__item"><i class="material-icons">link</i></li>
+            <li class="toolbar__item"><i class="material-icons">insert_photo</i></li>
+            <li class="toolbar__item arrow"><i class="material-icons">keyboard_arrow_down</i></li>
+          </ul>
+        </div>
 
+        <div class="editor">
           <textarea class="editor__textarea" placeholder="Start writing..."></textarea>
         </div>
       </div>
+
     </div>
 
     <script type="text/javascript" src="script.js"></script>

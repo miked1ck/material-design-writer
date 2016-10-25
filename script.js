@@ -10,8 +10,11 @@ var textarea = document.querySelector('.editor__textarea');
 button.addEventListener('click', function() {
   layout.classList.add('layout--writing');
   button.style.width = viewWidth;
-  button.style.height = viewHeight;
   setTimeout(function() {
     textarea.focus();
   }, 600);
+
+  setTimeout(function() {
+    button.style.height = viewHeight;
+  }, 350);
 });

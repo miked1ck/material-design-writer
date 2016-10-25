@@ -3,7 +3,6 @@
 }
 
 body {
-  background: #e1e5ea;
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
@@ -14,17 +13,18 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #EFF7FF;
+  background:  linear-gradient(45deg, rgba(144,164,174,.1) 0%, rgba(207,216,220,1) 100%);
 }
 
 .button {
-  background: #3F84F3;
+  background: #fff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
   display: inline-block;
-  transition: all 400ms cubic-bezier(.53,.57,.04,.97), background 100ms ease, transform 200ms ease;
+  transition: all 290ms cubic-bezier(.53,.57,.04,.97), background 100ms ease, transform 200ms ease;
   width: 115px;
-  height: 50px;
+  height: 60px;
   text-align: center;
+  position: relative;
 }
 
 .button:active {
@@ -35,40 +35,32 @@ body {
 .button__trigger {
   opacity: 1;
   padding: 13px 35px;
-  background: transparent;
+  background: #2979FF;
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   border: none;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
   text-align: center;
   cursor: pointer;
+  height: 60px;
 }
 
 .button__trigger:focus {
   outline: none;
 }
 
-.editor {
-  background: transparent;
-  width: 500px;
-  height: 300px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -250px;
-  margin-top: -150px;
-  /*transition: all 250ms ease;
-  transition-delay: 250ms;*/
-  opacity: 0;
-  pointer-events: none;
+.toolbar {
+  overflow: hidden;
+  position: relative;
+  height 0;
+  background: #2979FF;
 }
 
-.toolbar {
-  opacity: 0;
-  transition: all 380ms ease;
+.editor {
+  height: 0;
+  transition: all 300ms ease;
   transition-delay: 300ms;
-  border-bottom: 1px solid #eee;
   overflow: hidden;
 }
 
@@ -77,16 +69,8 @@ body {
   border: none;
   resize: none;
   width: 100%;
-  height: 243px;
+  height: 100%;
   font-size: 16px;
-  opacity: 0;
-  transition: all 380ms ease;
-  transition-delay: 200ms;
-
-  /*color: #3F84F3;
-  font-weight: 400;
-  text-shadow: 0 0 0 #999;
-  -webkit-text-fill-color: transparent;*/
 }
 
 .editor__textarea:focus {
@@ -97,22 +81,40 @@ body {
   margin: 0;
   padding: 0;
   color: #fff;
+  position: absolute;
+  top: 0;
 }
 
 .toolbar__slot--right {
-  float: right;
+  right: 0;
   padding-right: 15px;
 }
 
 .toolbar__slot--left {
-  float: left;
-  padding-left: 12px;
+  left: 0;
+  padding-left: 10px;
 }
 
 .toolbar__item {
   display: inline-block;
   margin: 0;
-  padding: 21px 10px 18px;
+  opacity: 0;
+  padding: 21px 7px 18px;
+  transition: opacity 880ms ease;
+  transition-delay: 0;
+}
+
+.toolbar__item .material-icons {
+  font-size: 20px !important;
+}
+
+.arrow {
+  background: rgba(0, 0, 0, .1);
+  height: 10px;
+  padding: 3px 3px 20px;
+  vertical-align: top;
+  margin-top: 19px;
+  margin-left: 10px;
 }
 
 
@@ -121,7 +123,12 @@ body {
 
 /* On write */
 .layout--writing .button__trigger {
-  opacity: 0;
+  display: none;
+}
+
+.layout--writing .button:active {
+  background: #fff;
+  transform: scale(1);
 }
 
 .layout--writing .button {
@@ -129,17 +136,15 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
 }
 
-.layout--writing {
-  /*background: #3F84F3;*/
-}
-
 .layout--writing .editor {
-  transform: scale(1);
-  opacity: 1;
+  height: 200px;
   pointer-events: all;
 }
 
-.layout--writing .editor__textarea,
 .layout--writing .toolbar {
+  height: 60px;
+}
+
+.layout--writing .toolbar__item {
   opacity: 1;
 }
